@@ -5,18 +5,15 @@ import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import AvatarCircles from "@/components/magicui/avatar-circles";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { cn } from "@/lib/utils";
-import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import * as React from "react"
 import { ChevronsUpDown, Plus, X } from "lucide-react"
 import NumberTicker from "@/components/magicui/number-ticker";
 import { useRef } from "react";
 import type { ConfettiRef } from "@/components/magicui/confetti";
-import Confetti from "@/components/magicui/confetti";
 import { Button } from "@/components/ui/button"
 import { Poppins } from 'next/font/google'
 import Ripple from "@/components/magicui/ripple";
-import ShinyButton from "@/components/magicui/shiny-button";
 
 const poppins = Poppins({
   subsets: ['latin'],

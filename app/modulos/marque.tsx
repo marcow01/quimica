@@ -1,7 +1,5 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/magicui/marquee";
-import Image, { StaticImageData } from 'next/image';
-import buzeira from "./fotoperfil.jpg";
  
 const reviews = [
   {
