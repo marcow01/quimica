@@ -7,6 +7,7 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 import { cn } from "@/lib/utils";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import * as React from "react"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ChevronsUpDown, Plus, X } from "lucide-react"
 import NumberTicker from "@/components/magicui/number-ticker";
 import { useRef } from "react";
@@ -40,6 +41,7 @@ export default function Home() {
   const [isOpen4, setIsOpen4] = React.useState(false)
   const [isOpen5, setIsOpen5] = React.useState(false)
   const [isOpen6, setIsOpen6] = React.useState(false)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const confettiRef = useRef<ConfettiRef>(null);
 
   return (
