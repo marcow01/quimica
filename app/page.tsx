@@ -1,4 +1,5 @@
 "use client"
+import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import { MarqueeDemo } from "./modulos/marque";
 import PulsatingButton from "@/components/magicui/pulsating-button";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
@@ -15,6 +16,7 @@ import type { ConfettiRef } from "@/components/magicui/confetti";
 import { Button } from "@/components/ui/button"
 import { Poppins } from 'next/font/google'
 import Ripple from "@/components/magicui/ripple";
+import Image from 'next/image';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -28,10 +30,10 @@ import {
 } from "@/components/ui/collapsible"
 
 const avatarUrls = [
-  "https://avatars.githubusercontent.com/u/16860528",
+  "https://cdn.bsky.app/img/avatar/plain/did:plc:tfpssovy4db6fmvschveeyzb/bafkreiat5bg5jvvu3kwummrol2p5cbzeuppugn34br26mvrt7vxjnhsoo4@jpeg",
   "https://avatars.githubusercontent.com/u/20110627",
   "https://avatars.githubusercontent.com/u/106103625",
-  "https://avatars.githubusercontent.com/u/59228569",
+  "https://cdn.bsky.app/img/avatar/plain/did:plc:qruaxn2eewkli7hsvzxo5hwf/bafkreies6twejpi5zqmgjgpqeegr5rbpm2cmyraksdqx7n2uvjkt4ohv5u@jpeg",
 ];
 
 export default function Home() {
@@ -39,7 +41,9 @@ export default function Home() {
   const [isOpen2, setIsOpen2] = React.useState(false)
   const [isOpen3, setIsOpen3] = React.useState(false)
   const [isOpen4, setIsOpen4] = React.useState(false)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isOpen5, setIsOpen5] = React.useState(false)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isOpen6, setIsOpen6] = React.useState(false)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const confettiRef = useRef<ConfettiRef>(null);
@@ -48,7 +52,7 @@ export default function Home() {
     <>
     <div className="container mx-auto px-4 sm:px-40 py-8 mt-16 text-center sm:text-left">
       <p className="text-3xl sm:text-5xl font-normal">Mude sua mentalidade <br></br> <span className="text-[#d14900] font-bold">Para mudar sua realidade</span></p>
-      <p className="text-sm sm:text-base pb-6 max-w-full sm:max-w-[48%] pt-6">Marcos, um ex entregador, mudou de vida ao ganhar na roleta online. Com estratégias de análises Roleta, deixando para trás a rotina exaustiva e se tornando um <span className="text-[#d14900] font-bold">empresário de sucesso.</span></p>
+      <p className="text-sm sm:text-base pb-6 max-w-full sm:max-w-[48%] pt-6">Luís, um ex entregador, mudou de vida ao ganhar na roleta online. Com estratégias de análises Roleta, deixando para trás a rotina exaustiva e se tornando um <span className="text-[#449e48] font-bold">empresário de sucesso.</span></p>
 
       <div className="inline-flex flex-col items-center">
         <PulsatingButton className="mb-4">QUERO FAZER PARTE</PulsatingButton>
@@ -58,8 +62,17 @@ export default function Home() {
         </div>
 
       </div>
-
-      </div>
+      <AnimatedGridPattern
+        numSquares={30}
+        maxOpacity={0.1}
+        duration={3}
+        repeatDelay={1}
+        className={cn(
+          "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+        )}
+      />
+    </div>
 
     <div className="max-w-[80%] mx-auto px-4 py-8">
       <div className="relative">
@@ -86,13 +99,19 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="text-center flex justify-center">
 
-                  <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+                  <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
                 <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-                  imagem
+                <Image
+                  src="/imgfunil.jpg"
+                  alt="Imagem: Ganhos pela roleta."
+                  fill  
+                  style={{ objectFit: 'cover' }} 
+                />
                 </span>
                 <BorderBeam size={250} duration={12} delay={9} />
               </div>
-
+        
+        
         </div>
         <div className="p-4">
 
@@ -123,7 +142,7 @@ export default function Home() {
       </p>
       
       <p className="px-4 font-medium max-w-xl mx-auto text-center">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, error. Ex porro molestias aperiam voluptatibus. Veniam cumque dolores molestias quas nulla aut ipsam atque necessitatibus corrupti, sequi facere id eum.
+      Se você está cansado de perder na roleta e quer finalmente aprender a ganhar de verdade, chegou o momento! Não fique de fora do nosso <span className="text-[#d14900] font-bold">GRUPO EXCLUSIVO DE ANÁLISES DA ROLETA</span> — onde só quem quer aprender a lucrar tem acesso.
       </p>
       
       <PulsatingButton className="mb-4 mt-4">Entrar</PulsatingButton>
@@ -144,34 +163,43 @@ export default function Home() {
 
     {/* Primeiro bloco */}
     <div className="rounded-lg p-6 shadow-lg">
-      <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-[#d14900] text-white mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
-        </svg>                                   
+      <div className="w-10 h-10 inline-flex items-center justify-center rounded-full text-white mb-4">
+      <Image
+          src="/Rocket.svg"
+          alt="rocket.svg"
+          width={200}
+          height={200}
+      />                              
       </div>
-      <h2 className="text-lg font-bold mb-2">Título aqui</h2>
+      <h2 className="text-lg font-bold mb-2">Análise profissional</h2>
       <p className="text-sm sm:text-base leading-relaxed text-justify">Com o meu método, você aprenderá a identificar padrões ocultos e tomar decisões mais informadas. Ao analisar as probabilidades de cada rodada, você desenvolverá uma visão estratégica que maximiza suas chances de sucesso na roleta.</p>
     </div>
 
     {/* Segundo bloco */}
     <div className="rounded-lg p-6 shadow-lg">
-      <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-[#d14900] text-white mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
-        </svg>                                   
+      <div className="w-10 h-10 inline-flex items-center justify-center rounded-full text-white mb-4">
+      <Image
+          src="/DirectHit.svg"
+          alt="directhit.svg"
+          width={200}
+          height={200}
+      />                                   
       </div>
-      <h2 className="text-lg font-bold mb-2">Título aqui</h2>
+      <h2 className="text-lg font-bold mb-2">Proteja seu capital</h2>
       <p className="text-sm sm:text-base leading-relaxed text-justify">Utilizando a técnica que desenvolvi, você verá como o gerenciamento eficiente do seu bankroll é crucial para o sucesso. Com práticas recomendadas e estratégias de apostas ajustadas, você protegerá seu capital e aumentará suas chances de lucro sustentável.</p>
     </div>
 
     {/* Terceiro bloco */}
     <div className="rounded-lg p-6 shadow-lg">
-      <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-[#d14900] text-white mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
-        </svg>                                   
+      <div className="w-10 h-10 inline-flex items-center justify-center rounded-full text-white mb-4">
+      <Image
+          src="/Memo.svg"
+          alt="memo.svg"
+          width={200}
+          height={200}
+      />                                 
       </div>
-      <h2 className="text-lg font-bold mb-2">Título aqui</h2>
+      <h2 className="text-lg font-bold mb-2">Estratégias claras</h2>
       <p className="text-sm sm:text-base leading-relaxed text-justify">Aproveitando o meu método, você poderá adotar uma abordagem mais disciplinada e controlada. Isso significa que você terá estratégias claras e gerenciáveis, ajudando a minimizar perdas e a manter o foco nos seus objetivos de ganhos.</p>
     </div>
 
@@ -195,7 +223,7 @@ export default function Home() {
         className="w-full"
       >
         <div className="flex items-center justify-between space-x-4 px-6 border rounded-lg py-4">
-          <h4 className="font-bold text-lg">
+          <h4 className="text-lg">
             Sou iniciante nesse mercado, não entendo nada, consigo ter resultados?
           </h4>
           <CollapsibleTrigger asChild>
@@ -207,7 +235,7 @@ export default function Home() {
         </div>
         <CollapsibleContent className="space-y-2">
           <div className={`rounded-md border px-4 py-3 font-mono text-base mt-2 ${poppins.className}`}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti quo provident dignissimos, laudantium dolorum saepe delectus. Ullam mollitia quia facilis dolore minima, sint accusamus tempore assumenda vitae, voluptatem neque.
+          Sim! Com a orientação certa e um método estruturado, mesmo iniciantes podem obter resultados. O importante é aprender as estratégias e aplicar as técnicas de forma disciplinada.
           </div>
         </CollapsibleContent>
       </Collapsible>
@@ -220,7 +248,7 @@ export default function Home() {
         className="w-full"
       >
         <div className="flex items-center justify-between space-x-4 px-6 border rounded-lg py-4">
-          <h4 className="font-bold text-lg">
+          <h4 className="text-lg">
             Em quanto tempo posso esperar retorno financeiro?
           </h4>
           <CollapsibleTrigger asChild>
@@ -232,7 +260,7 @@ export default function Home() {
         </div>
         <CollapsibleContent className="space-y-2">
           <div className={`rounded-md border px-4 py-3 font-mono text-base mt-2 ${poppins.className}`}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti quo provident dignissimos, laudantium dolorum saepe delectus. Ullam mollitia quia facilis dolore minima, sint accusamus tempore assumenda vitae, voluptatem neque.
+          O retorno financeiro pode variar conforme o método utilizado e a dedicação. Muitos membros começam a ver resultados significativos em algumas semanas, mas é crucial ter paciência e continuar aprendendo.
           </div>
         </CollapsibleContent>
       </Collapsible>
@@ -251,7 +279,7 @@ export default function Home() {
         className="w-full"
       >
         <div className="flex items-center justify-between space-x-4 px-6 border rounded-lg py-4">
-          <h4 className="font-bold text-lg">
+          <h4 className="text-lg">
             Existe alguém para me ajudar a esclarecer dúvidas durante o processo?
           </h4>
           <CollapsibleTrigger asChild>
@@ -263,7 +291,7 @@ export default function Home() {
         </div>
         <CollapsibleContent className="space-y-2">
           <div className={`rounded-md border px-4 py-3 font-mono text-base mt-2 ${poppins.className}`}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti quo provident dignissimos, laudantium dolorum saepe delectus. Ullam mollitia quia facilis dolore minima, sint accusamus tempore assumenda vitae, voluptatem neque.
+          Sim! Nossa comunidade é composta por membros ativos e experientes que estão sempre dispostos a ajudar. Você nunca estará sozinho na sua jornada.
           </div>
         </CollapsibleContent>
       </Collapsible>
@@ -276,7 +304,7 @@ export default function Home() {
         className="w-full"
       >
         <div className="flex items-center justify-between space-x-4 px-6 border rounded-lg py-4">
-          <h4 className="font-bold text-lg">
+          <h4 className="text-lg">
             Qual é o valor mínimo que preciso investir para começar?
           </h4>
           <CollapsibleTrigger asChild>
@@ -288,7 +316,7 @@ export default function Home() {
         </div>
         <CollapsibleContent className="space-y-2">
           <div className={`rounded-md border px-4 py-3 font-mono text-base mt-2 ${poppins.className}`}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti quo provident dignissimos, laudantium dolorum saepe delectus. Ullam mollitia quia facilis dolore minima, sint accusamus tempore assumenda vitae, voluptatem neque.
+            O valor mínimo para começar pode variar, mas recomendamos um investimento inicial que permita aplicar as estratégias de forma eficaz, sem comprometer seu bankroll. O foco deve ser sempre na gestão responsável do capital.
           </div>
         </CollapsibleContent>
       </Collapsible>
@@ -296,116 +324,6 @@ export default function Home() {
   </div>
 </div>
 { /* FAQ */ }
-
-<div className="container mx-auto px-4 sm:px-10 lg:px-40 mt-8">
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div className="rounded-lg">
-      <Collapsible
-        open={isOpen3}
-        onOpenChange={setIsOpen3}
-        className="w-full"
-      >
-        <div className="flex items-center justify-between space-x-4 px-6 border rounded-lg py-4">
-          <h4 className="font-bold text-lg">
-            Existe alguém para me ajudar a esclarecer dúvidas durante o processo?
-          </h4>
-          <CollapsibleTrigger asChild>
-            <Button variant="ghost" size="sm" className="w-9 p-0">
-              <ChevronsUpDown className="h-4 w-4 text-[#d14900]" />
-              <span className="sr-only">Toggle</span>
-            </Button>
-          </CollapsibleTrigger>
-        </div>
-        <CollapsibleContent className="space-y-2">
-          <div className={`rounded-md border px-4 py-3 font-mono text-base mt-2 ${poppins.className}`}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti quo provident dignissimos, laudantium dolorum saepe delectus. Ullam mollitia quia facilis dolore minima, sint accusamus tempore assumenda vitae, voluptatem neque.
-          </div>
-        </CollapsibleContent>
-      </Collapsible>
-    </div>
-
-    <div className="rounded-lg">
-      <Collapsible
-        open={isOpen4}
-        onOpenChange={setIsOpen4}
-        className="w-full"
-      >
-        <div className="flex items-center justify-between space-x-4 px-6 border rounded-lg py-4">
-          <h4 className="font-bold text-lg">
-            Qual é o valor mínimo que preciso investir para começar?
-          </h4>
-          <CollapsibleTrigger asChild>
-            <Button variant="ghost" size="sm" className="w-9 p-0">
-              <ChevronsUpDown className="h-4 w-4 text-[#d14900]" />
-              <span className="sr-only">Toggle</span>
-            </Button>
-          </CollapsibleTrigger>
-        </div>
-        <CollapsibleContent className="space-y-2">
-          <div className={`rounded-md border px-4 py-3 font-mono text-base mt-2 ${poppins.className}`}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti quo provident dignissimos, laudantium dolorum saepe delectus. Ullam mollitia quia facilis dolore minima, sint accusamus tempore assumenda vitae, voluptatem neque.
-          </div>
-        </CollapsibleContent>
-      </Collapsible>
-    </div>
-  </div>
-</div>
-
-{/* FAQ */}
-
-<div className="container mx-auto px-4 sm:px-10 lg:px-40 mt-8 mb-8">
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div className="rounded-lg">
-      <Collapsible
-        open={isOpen5}
-        onOpenChange={setIsOpen5}
-        className="w-full"
-      >
-        <div className="flex items-center justify-between space-x-4 px-6 border rounded-lg py-4">
-          <h4 className="font-bold text-lg">
-            Sou iniciante nesse mercado, não entendo nada, consigo ter resultados?
-          </h4>
-          <CollapsibleTrigger asChild>
-            <Button variant="ghost" size="sm" className="w-9 p-0">
-              <ChevronsUpDown className="h-4 w-4 text-[#d14900]" />
-              <span className="sr-only">Toggle</span>
-            </Button>
-          </CollapsibleTrigger>
-        </div>
-        <CollapsibleContent className="space-y-2">
-          <div className={`rounded-md border px-4 py-3 font-mono text-base mt-2 ${poppins.className}`}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti quo provident dignissimos, laudantium dolorum saepe delectus. Ullam mollitia quia facilis dolore minima, sint accusamus tempore assumenda vitae, voluptatem neque.
-          </div>
-        </CollapsibleContent>
-      </Collapsible>
-    </div>
-
-    <div className="rounded-lg">
-      <Collapsible
-        open={isOpen6}
-        onOpenChange={setIsOpen6}
-        className="w-full"
-      >
-        <div className="flex items-center justify-between space-x-4 px-6 border rounded-lg py-4">
-          <h4 className="font-bold text-lg">
-            Preciso ter experiência anterior para começar?
-          </h4>
-          <CollapsibleTrigger asChild>
-            <Button variant="ghost" size="sm" className="w-9 p-0">
-              <ChevronsUpDown className="h-4 w-4 text-[#d14900]" />
-              <span className="sr-only">Toggle</span>
-            </Button>
-          </CollapsibleTrigger>
-        </div>
-        <CollapsibleContent className="space-y-2">
-          <div className={`rounded-md border px-4 py-3 font-mono text-base mt-2 ${poppins.className}`}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti quo provident dignissimos, laudantium dolorum saepe delectus. Ullam mollitia quia facilis dolore minima, sint accusamus tempore assumenda vitae, voluptatem neque.
-          </div>
-        </CollapsibleContent>
-      </Collapsible>
-    </div>
-  </div>
-</div>
 
 
 <footer className="container mx-auto px-4 sm:px-10 lg:px-40 mt-28 mb-8">

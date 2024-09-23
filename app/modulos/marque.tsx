@@ -5,38 +5,44 @@ const reviews = [
   {
     name: "Buzeira",
     username: "@buzeira",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
+    body: "Esse é da tropa do 00! 🚀",
     img: "https://instagram.ftur2-1.fna.fbcdn.net/v/t39.30808-6/429688205_17902821800983139_6655304731900534870_n.jpg?se=-1&stp=dst-jpegr_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuaGRyLmYzMDgwOC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.ftur2-1.fna.fbcdn.net&_nc_cat=1&_nc_ohc=z1vS-pSNnncQ7kNvgE2CA66&edm=AP4sbd4AAAAA&ccb=7-5&ig_cache_key=MzMxMjg1OTc1MjE1MTQyOTQxNg%3D%3D.3-ccb7-5&oh=00_AYBDqEV6hHHnjDjlCgzYNONvwCPZLMRonS-egrNeGFJNNA&oe=66F3EEEF&_nc_sid=7a9f4b",
   },
   {
     name: "Allan Cabral",
     username: "@allacabral",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
+    body: "Eu vi o Bruno operar ao vivo, mestre!",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5qYrnnRixKeO2iB-C1yY1MTKYNK5MVZWGUw&s",
   },
   {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
+    name: "Gustavo",
+    username: "@guxtaslk",
+    body: "Tu é brabo demais Bruno! Fiz R$800,00 com tuas análises. 🚀",
+    img: "https://cdn.bsky.app/img/avatar/plain/did:plc:667oojl37sacmel3xuthlbdn/bafkreiawhylcetiyorlew7vim6eydapewam5l6sfbakjrg6j3v54k5qata@jpeg",
   },
   {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
+    name: "Nathalia",
+    username: "@natyfilho",
+    body: "Fui de R$200 pra R$1000😍 apenas seguindo tuas análises. Obrigada Bruno!",
+    img: "https://cdn.bsky.app/img/avatar/plain/did:plc:swac6z3vjoxuxociuge4bkeq/bafkreic5kxuelhm24oixo66e4vmq7z5io2rway6vcyvhlzpwmbx7tqlg6m@jpeg",
   },
   {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
+    name: "Pedro",
+    username: "@pedrao661",
+    body: "Melhor analista da roleta que eu já vi. Parabéns pelo trabalho!",
+    img: "https://cdn.bsky.app/img/avatar/plain/did:plc:hsn4vtursjbbftfdteexiyh3/bafkreib2dlfz2c3kznhexkukb7n4zgiph2jvh5c6vpiy65z7ghwhxpb4nu@jpeg",
   },
   {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
+    name: "Jefferson",
+    username: "@jeffll",
+    body: "Se seguir as análises do Bruno, você vai longe. Dá pra duplicar o dinheiro do mês fácil! 💰",
+    img: "https://cdn.bsky.app/img/avatar/plain/did:plc:3e7i76sogtqky3nv3k4j3gdn/bafkreiapyeoytl2nvzgrp3qefw5va2ez3rsx3qeuqmavkn2mvtl7l3eiky@jpeg",
+  },
+  {
+    name: "Luís",
+    username: "@luix777",
+    body: "Mudei de vida com os ensinamentos do Bruno, sou muito grato! Vem que dá certo!",
+    img: "https://cdn.bsky.app/img/avatar/plain/did:plc:m7nj7ogwzuqqnzyyxedw4nk4/bafkreigegn6tmol56bqur3uctiendqtm6xtnoqojznzk77wnuo2h26ozbu@jpeg",
   },
 ];
  
@@ -71,7 +77,14 @@ const ReviewCard = ({
             <figcaption className="text-lg font-bold">
               {name}
             </figcaption>
-            <img src="https://img.icons8.com/?size=512&id=2sZ0sdlG9kWP&format=png" className="w-[15px] h-[15px] ml-1" alt="" />
+
+            {(username === '@buzeira' || username === '@allacabral') && (
+            <img 
+              src="https://img.icons8.com/?size=512&id=2sZ0sdlG9kWP&format=png" 
+              className="w-[15px] h-[15px] ml-1" 
+              alt="Ícone específico" 
+            />
+              )}
           </div>
           <p className="text-sm font-medium dark:text-white/40 text-gray-600">{username}</p>
         </div>
