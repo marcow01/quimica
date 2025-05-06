@@ -428,6 +428,7 @@ const elementos: Elemento[] = [
 export function Quiz () {
     
     const [indice, setIndice] = useState<number[]>([]);
+    const [resultado, setResultado] = useState(false);
     const [simbolo, setSimbolo] = useState(false);
     const [familia, setFamilia] = useState(false);
     const [atual, setAtual] = useState<number>(0);
@@ -506,7 +507,9 @@ export function Quiz () {
             setAtual(atual + 1);
         }
         else{
-            //setInicio(false);
+            setResultado(true);
+            setFamilia(false);
+            setSimbolo(false);
         }
 
     }
@@ -518,7 +521,6 @@ export function Quiz () {
             {/* Show initial selection if neither game is active */}
             {!simbolo && !familia ? (
               <>
-                <p className="mb-6">selecione o teste e responda as perguntas!</p>
                 <div className="bg-[#1c1c1f] rounded-lg aspect-square w-20 flex items-center justify-center text-white text-4xl font-bold mb-2">
                   {indiceamostrador !== null && elementos[indiceamostrador].simbolo}
                 </div>
@@ -584,6 +586,13 @@ export function Quiz () {
                 <p className='mt-4'>metais alcalinos, metais alcalinos terrosos, boro, carbono, nitrogenio, calcogenios, halogenios, gases nobres, metais.</p>
               </>
             )}
+
+            {resultado && (
+              <>
+                <p className='mt-10'>pontuacao final: {pontos}</p>
+              </>
+            )}
+
           </div>
         </div>
       </>
